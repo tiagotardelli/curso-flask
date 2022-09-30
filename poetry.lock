@@ -58,6 +58,18 @@ Flask = ">=0.8"
 visitor = "*"
 
 [[package]]
+name = "flask-login"
+version = "0.6.2"
+description = "User authentication and session management for Flask."
+category = "main"
+optional = false
+python-versions = ">=3.7"
+
+[package.dependencies]
+Flask = ">=1.0.4"
+Werkzeug = ">=1.0.1"
+
+[[package]]
 name = "importlib-metadata"
 version = "4.12.0"
 description = "Read metadata from Python packages"
@@ -104,6 +116,14 @@ optional = false
 python-versions = ">=3.7"
 
 [[package]]
+name = "python-decouple"
+version = "3.6"
+description = "Strict separation of settings from code."
+category = "main"
+optional = false
+python-versions = "*"
+
+[[package]]
 name = "visitor"
 version = "0.1.3"
 description = "A tiny pythonic visitor implementation."
@@ -140,7 +160,7 @@ testing = ["pytest (>=6)", "pytest-checkdocs (>=2.4)", "pytest-flake8", "pytest-
 [metadata]
 lock-version = "1.1"
 python-versions = "^3.9"
-content-hash = "2ec8b0a12f875c1e5b149c26ef47253e8d5ff11b66f50075cea4a345f503dcc0"
+content-hash = "3da86751c225bd138104f75405cee28100dbbadad217f21e1feb7555fa40627c"
 
 [metadata.files]
 click = []
@@ -148,10 +168,12 @@ colorama = []
 dominate = []
 flask = []
 flask-bootstrap = []
+flask-login = []
 importlib-metadata = []
 itsdangerous = []
 jinja2 = []
 markupsafe = []
+python-decouple = []
 visitor = []
 werkzeug = []
 zipp = []

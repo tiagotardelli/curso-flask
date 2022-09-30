@@ -2,7 +2,7 @@
     <li>Id: {{ user.id }}</li>
     <li>Nome: {{ user.name }}</li>
     <li>email: {{ user.email }}</li>
-    <li>perfil: {{ user. }}</li>
+    <li>perfil: {{ user.profile.name }}</li>
     <li>photo: {{ user.profile.photo }}</li>
     <a href="{{ url_for('delete', id=user.id) }}">Deletar</a>
 </ul>
