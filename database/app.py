@@ -1,4 +1,4 @@
-import re
+from datetime import timedelta
 from decouple import config
 from flask import Flask, render_template, request, url_for, redirect, flash
 from flask_sqlalchemy import SQLAlchemy
@@ -79,6 +79,7 @@ def login():
     if request.method == "POST":
         email = request.form["email"]
         password = request.form["password"]
+        remember = request.form["remember"]
 
         user = User.query.filter_by(email=email).first()
 
@@ -90,7 +91,7 @@ def login():
             flash("Credências inválidas")
             return redirect(url_for("login"))
 
-        login_user(user)
+        login_user(user, remember=remember, duration=timedelta(days=7))
         return redirect(url_for("index"))
 
     return render_template("login.html")
