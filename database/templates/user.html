@@ -1,8 +1,34 @@
-<ul>
-    <li>Id: {{ user.id }}</li>
-    <li>Nome: {{ user.name }}</li>
-    <li>email: {{ user.email }}</li>
-    <li>perfil: {{ user.profile.name }}</li>
-    <li>photo: {{ user.profile.photo }}</li>
-    <a href="{{ url_for('delete', id=user.id) }}">Deletar</a>
-</ul>
+{% extends 'base.html' %}
+
+{% block content %}
+<div class="mt-5">
+    <a href="{{url_for('index')}}" class="btn btn-info ">
+        <i class="fa-solid fa-arrow-left"></i>
+        Voltar
+    </a>
+    <table class="table table-striped mt-2">
+        <thead>
+            <tr>
+                <td>
+                    {{ user.id }}
+                </td>
+                <td>
+                    {{ user.name }}
+                </td>
+                <td>
+                    {{ user.email }}
+                </td>
+                <td>
+                    {{ user.profile.photo }}
+                </td>
+                <td>
+                    <a class="btn btn-danger btn-sm" href="{{ url_for('delete', id=user.id) }}">
+                    <i class="fa-solid fa-trash"></i>
+                    </a>
+                </td>
+            </tr>
+        </thead>
+    </table>
+</div>
+
+{% endblock  %}
